@@ -11,6 +11,16 @@ Simple CRUD API. image upload and update record. file upload with multer module.
 
 ## API Reference
 
+#### add users
+
+```http
+  POST/user
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `api_key` | `string` | **Required**. Your API key |
+
 #### Get all users
 
 ```http
