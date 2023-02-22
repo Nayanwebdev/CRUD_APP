@@ -1,7 +1,7 @@
 
 #CRUD_APP
 
-Simple CRUD API. image upload and update record. file upload with multer module.
+Simple Node JS MySQL CRUD API. image upload and update record. file upload with multer module.
 
 
 ## Authors
