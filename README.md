@@ -8,6 +8,10 @@ Simple CRUD API. image upload and update record. file upload with multer module.
 
 - [@nayanwebdev](https://www.github.com/nayanwebdev)
 
+## Tech Stack
+```bash
+Node Express MySQL
+```
 
 ## API Reference
 
