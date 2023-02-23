@@ -98,8 +98,11 @@ export const userLogin = async (req, res) => {
       return res.status(404).json("abe tu muje database me dikh nahi raha yato tera password galat he.....");
     }
     let token;
-    token = jwt.sign({ id: existUser.id, email: existUser.email, password: existUser.password }, "secretkey", { expiresIn: "1h" });
-    res.status(200).json(token);
+    token = jwt.sign({ id: existUser.id, email: existUser.email, password: existUser.password }, process.env.SECRET_KEY, { expiresIn: "1h" });
+
+    return res.cookie("access_token", token).status(200).json({ message: "Logged in successfully 😊 👌",token });
+
+    // res.status(200).json(token);
   } catch (err) {
     res.status(500).json("something went wrong");
   }
@@ -111,7 +114,7 @@ export const accessToken = (req, res) => {
     if (!token) {
       return res.status(404).json("token to de bhai");
     }
-    const decodedToken = jwt.verify(token, "secretkey");
+    const decodedToken = jwt.verify(token, process.env.SECRET_KEY);
     // console.log(decodedToken);
     res.status(200).json({ data: decodedToken });
   } catch (err) {
