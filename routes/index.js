@@ -1,6 +1,6 @@
 import { Router } from "express";
 import multer from "multer";
-import { addUser, getAllUser, getSingleUser, deleteUser, updateUser } from "../controller/homeController.js";
+import { addUser, getAllUser, getSingleUser, deleteUser, updateUser, userLogin, accessToken } from "../controller/homeController.js";
 import avtarStorage from "../middleware/avatarstorage.js";
 
 const router = Router();
@@ -14,5 +14,6 @@ router.get("/user", getAllUser);
 router.get("/user/:id", getSingleUser);
 router.delete("/user/:id", deleteUser);
 router.patch("/user/:id", multer({ storage: avtarStorage }).single("avatar"), updateUser);
-
+router.post("/userlogin", userLogin);
+router.get("/accessToken", accessToken);
 export default router;
