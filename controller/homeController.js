@@ -33,17 +33,19 @@ export const getAllUser = async (req, res) => {
   try {
     const allUser = await User.findAll({});
     // res.status(200).json(allUser);
-        res.render('viewUser.ejs', {user: allUser});
-        
-      } catch (err) {
-        res.status(500).json("something went wrong");
-      }
-    };
-    
-    export const getSingleUser = async (req, res) => {
-      try {
-        const user = await User.findOne({ where: { id: req.params.id } });
-        res.status(200).json(user);
+    res.render("viewAllUser.ejs", { user: allUser });
+  } catch (err) {
+    res.status(500).json("something went wrong");
+  }
+};
+
+export const getSingleUser = async (req, res) => {
+  try {
+    const user = await User.findOne({ where: { id: req.params.id } });
+    const tempUser = [];
+    tempUser.push(user);
+    // res.status(200).json(tempUser);
+    res.render("viewUser.ejs", { user: tempUser });
   } catch (err) {
     res.status(500).json("something went wrong");
   }
@@ -56,7 +58,7 @@ export const deleteUser = async (req, res) => {
 
     const deleteUser = await User.destroy({ where: { id: req.params.id } });
     // return res.status(200).json("user deleted successfully");
-    return res.redirect('back');
+    return res.redirect("back");
   } catch (err) {
     res.status(500).json("something went wrong");
   }

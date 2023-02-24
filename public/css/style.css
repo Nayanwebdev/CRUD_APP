@@ -22,8 +22,8 @@
   padding: 0 3px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: -webkit-gradient(linear, left top, right top, from(#12C0A6), color-stop(50%, #12C0A6), color-stop(50%, #222));
-  background-image: linear-gradient(to right, #12C0A6, #12C0A6 50%, #222 50%);
+  background-image: -webkit-gradient(linear, left top, right top, from(#12c0a6), color-stop(50%, #12c0a6), color-stop(50%, #222));
+  background-image: linear-gradient(to right, #12c0a6, #12c0a6 50%, #222 50%);
   background-size: 200% 100%;
   background-position: 100%;
 }
@@ -33,7 +33,7 @@
   background-position: 0%;
 }
 .getApp {
-  background: #12C0A6;
+  background: #12c0a6;
   padding: 10px 30px;
   border-radius: 3px;
   position: relative;
@@ -41,7 +41,7 @@
   margin-left: auto;
 }
 .getApp .getappOpen {
-  background: #12C0A6;
+  background: #12c0a6;
   position: absolute;
   top: 100%;
   left: 0;
@@ -73,7 +73,7 @@
 .zyppedgeCntr .tab-pane h2 {
   font-size: 2.8rem;
   font-weight: 600;
-  color: #12C0A6;
+  color: #12c0a6;
   display: inline-block;
 }
 .zyppedgeCntr .tab-pane h2 a {
@@ -111,7 +111,7 @@
   display: block;
   width: 65px;
   height: 65px;
-  background: #12C0A6;
+  background: #12c0a6;
   border-radius: 50%;
   -webkit-animation: pulse-border 1500ms ease-out infinite;
   animation: pulse-border 1500ms ease-out infinite;
@@ -127,7 +127,7 @@
   display: block;
   width: 65px;
   height: 65px;
-  background: #12C0A6;
+  background: #12c0a6;
   border-radius: 50%;
   -webkit-transition: all 200ms;
   transition: all 200ms;
@@ -181,10 +181,6 @@ a:hover {
   color: #fff;
   font-weight: 900;
 }
-
-
-
-
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap");
 
@@ -334,14 +330,46 @@ a:hover {
   color: #2acc80;
 }
 
-
 .gradient-custom {
   /* fallback for old browsers */
   background: #f6d365;
-  
+
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
-  
+
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1))
-  }
+  background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+}
+
+a.style2 {
+  position: relative;
+  text-decoration: none;
+  color: #ff2b63;
+  font-weight: normal;
+  padding: 2px 12px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  background-color: none;
+  border: 3px var(--c, #ff2b63) solid;
+  z-index: 2;
+}
+a.style2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--c, #ff2b63);
+  z-index: -1;
+  transition: height 0.3s ease;
+}
+a.style2:hover {
+  color: white;
+}
+a.style2:hover::before {
+  height: 100%;
+  color: black;
+}

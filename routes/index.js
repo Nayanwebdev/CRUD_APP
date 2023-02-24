@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {res.render("addUser")});
 
 router.post("/user", multer({ storage: avtarStorage }).single("avatar"), addUser);
 router.get("/getuser", getAllUser);
-router.get("/user/:id", getSingleUser);
+router.get("/getuser/:id", getSingleUser);
 router.delete("/delete/:id", deleteUser);
 router.get("/delete/:id", deleteUser);
 router.patch("/user/:id", multer({ storage: avtarStorage }).single("avatar"), updateUser);
