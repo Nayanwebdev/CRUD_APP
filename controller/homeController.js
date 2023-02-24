@@ -16,7 +16,6 @@ export const addUser = async (req, res) => {
       fs.unlinkSync(path.join(__dirname, "../uploads/avatar", req.file.filename));
       return res.status(403).json("user already registered");
     }
-
     const AVATAR_PATH = path.join("/uploads/avatar");
     const user = await User.create({
       name: req.body.name,
@@ -33,16 +32,18 @@ export const addUser = async (req, res) => {
 export const getAllUser = async (req, res) => {
   try {
     const allUser = await User.findAll({});
-    res.status(200).json(allUser);
-  } catch (err) {
-    res.status(500).json("something went wrong");
-  }
-};
-
-export const getSingleUser = async (req, res) => {
-  try {
-    const user = await User.findOne({ where: { id: req.params.id } });
-    res.status(200).json(user);
+    // res.status(200).json(allUser);
+        res.render('viewUser.ejs', {user: allUser});
+        
+      } catch (err) {
+        res.status(500).json("something went wrong");
+      }
+    };
+    
+    export const getSingleUser = async (req, res) => {
+      try {
+        const user = await User.findOne({ where: { id: req.params.id } });
+        res.status(200).json(user);
   } catch (err) {
     res.status(500).json("something went wrong");
   }
@@ -54,7 +55,8 @@ export const deleteUser = async (req, res) => {
     fs.unlinkSync(path.join(__dirname, "..", user.avatar));
 
     const deleteUser = await User.destroy({ where: { id: req.params.id } });
-    return res.status(200).json("user deleted successfully");
+    // return res.status(200).json("user deleted successfully");
+    return res.redirect('back');
   } catch (err) {
     res.status(500).json("something went wrong");
   }

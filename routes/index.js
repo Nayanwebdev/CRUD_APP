@@ -5,15 +5,16 @@ import avtarStorage from "../middleware/avatarstorage.js";
 
 const router = Router();
 
-router.get("/", async (req, res) => {
-  res.send(`<h1 style="color:red; text-align:center;">welcome to CRUD APP</h1>`);
-});
+router.get("/", async (req, res) => {res.render("addUser")});
+// router.get("/ViewUser", async (req, res) => {res.render("viewUser")});
 
 router.post("/user", multer({ storage: avtarStorage }).single("avatar"), addUser);
-router.get("/user", getAllUser);
+router.get("/getuser", getAllUser);
 router.get("/user/:id", getSingleUser);
-router.delete("/user/:id", deleteUser);
+router.delete("/delete/:id", deleteUser);
+router.get("/delete/:id", deleteUser);
 router.patch("/user/:id", multer({ storage: avtarStorage }).single("avatar"), updateUser);
 router.post("/userlogin", userLogin);
 router.get("/accessToken", accessToken);
+
 export default router;
