@@ -1,6 +1,6 @@
 import { Router } from "express";
 import multer from "multer";
-import { addUser, getAllUser, getSingleUser, deleteUser, updateUser, userLogin, accessToken } from "../controller/homeController.js";
+import { addUser, getAllUser, getSingleUser, deleteUser, updateUser, userLogin,accessToken } from "../controller/homeController.js";
 import avtarStorage from "../middleware/avatarstorage.js";
 
 const router = Router();

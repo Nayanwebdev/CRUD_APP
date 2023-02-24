@@ -100,7 +100,7 @@ export const userLogin = async (req, res) => {
     let token;
     token = jwt.sign({ id: existUser.id, email: existUser.email, password: existUser.password }, process.env.SECRET_KEY, { expiresIn: "1h" });
 
-    return res.cookie("access_token", token).status(200).json({ message: "Logged in successfully 😊 👌",token });
+    return res.cookie("access_token", token).status(200).json({ message: "Logged in successfully 😊 👌", token });
 
     // res.status(200).json(token);
   } catch (err) {
@@ -108,9 +108,10 @@ export const userLogin = async (req, res) => {
   }
 };
 
-export const accessToken = (req, res) => {
+export const accessToken = (req, res, next) => {
+  console.log(req.cookies.access_token);
   try {
-    const token = req.headers.authorization.split(" ")[1];
+    const token = req.cookies.access_token;
     if (!token) {
       return res.status(404).json("token to de bhai");
     }
