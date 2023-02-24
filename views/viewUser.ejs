@@ -46,7 +46,7 @@
       </div>
     </header>
     <main>
-      <section class="vh-100" style="background-color: #f4f5f7">
+      <section class="" style="background-color: #f4f5f7">
         <div class="container py-5 h-100">
           <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-6 mb-4 mb-lg-0">
@@ -84,7 +84,7 @@
                           <h6>Most Viewed</h6>
                           <p class="text-muted">Dolor sit amet</p>
                         </div>
-                      </div>                      
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -95,6 +95,32 @@
         </div>
       </section>
     </main>
+
+    <div id="main" class="container my-5">
+      <div id="brand" class="card-bock-hp text-center">
+        <% for(var data of user){ %>
+        <div class="first brand">
+          <img class="brand-img" src="<%= data.avatar %>" alt="dior" />
+          <div class="brand-description-bk"></div>
+          <div class="brand-logo">
+            <img src="<%= data.avatar %>" alt="dior logo" />
+          </div>
+
+          <div class="brand-name">
+            <p><%= data.name %></p>
+          </div>
+
+          <div class="brand-description">
+            <p>
+              <b>Dior</b> perfumes still represent all the passions <br />
+              of the couturier who founded the label. <br />
+              Christian Dior's love of flowers naturally led to the creation of numerous fragrances with a floral heart.
+            </p>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
     <footer>
       <p class="text-center p-3 m-0 fs-4 fw-bold text-uppercase">welcome to crud app</p>
     </footer>

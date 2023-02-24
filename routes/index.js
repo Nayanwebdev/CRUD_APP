@@ -1,11 +1,13 @@
 import { Router } from "express";
 import multer from "multer";
-import { addUser, getAllUser, getSingleUser, deleteUser, updateUser, userLogin,accessToken } from "../controller/homeController.js";
+import { addUser, getAllUser, getSingleUser, deleteUser, updateUser, userLogin, accessToken,  } from "../controller/homeController.js";
 import avtarStorage from "../middleware/avatarstorage.js";
 
 const router = Router();
 
-router.get("/", async (req, res) => {res.render("addUser")});
+router.get("/", async (req, res) => {
+  res.render("addUser");
+});
 // router.get("/ViewUser", async (req, res) => {res.render("viewUser")});
 
 router.post("/user", multer({ storage: avtarStorage }).single("avatar"), addUser);
@@ -16,5 +18,7 @@ router.get("/delete/:id", deleteUser);
 router.patch("/user/:id", multer({ storage: avtarStorage }).single("avatar"), updateUser);
 router.post("/userlogin", userLogin);
 router.get("/accessToken", accessToken);
-
+router.get("/error", (req, res) => {
+  res.render("Error404");
+});
 export default router;
