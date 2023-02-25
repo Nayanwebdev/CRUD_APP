@@ -21,9 +21,12 @@ export const addUser = async (req, res) => {
       name: req.body.name,
       avatar: AVATAR_PATH + "/" + req.file.filename,
       email: req.body.email,
+      position:req.body.position,
+      phone:req.body.phone,
       password: req.body.password,
     });
-    res.status(200).json(user);
+    // res.status(200).json(user);
+    res.render("viewAllUser.ejs", { user: user });
   } catch (err) {
     res.status(500).json("something went wrong");
   }
