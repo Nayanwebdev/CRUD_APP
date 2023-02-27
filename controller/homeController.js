@@ -49,7 +49,6 @@ export const getSingleUser = async (req, res) => {
     const tempUser = [];
     tempUser.push(user);
     // res.status(200).json(tempUser);
-    console.log(tempUser);
     res.render("viewUser", { user: tempUser });
   } catch (err) {
     res.status(500).json("something went wrong");
