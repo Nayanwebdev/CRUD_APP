@@ -408,7 +408,7 @@ a.style2.infobtn:hover::before {
   background-color: var(--c, #fbab7e);
 
 }
-
+/* 
 .card-bock-hp {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -441,7 +441,6 @@ a.style2.infobtn:hover::before {
   box-shadow: -1px 10px 10px 0px rgba(0, 0, 0, 0.8);
 }
 
-/*그라데이션 박스*/
 .brand-description-bk {
   background-image: linear-gradient(0deg, #b0324a, #fdd9e6);
   position: absolute;
@@ -457,7 +456,6 @@ a.style2.infobtn:hover::before {
   background-image: linear-gradient(-20deg, #383637, #dbdbdb);
 }
 
-/*로고 박스*/
 .brand-logo {
   height: 80px;
   width: 80px;
@@ -475,7 +473,6 @@ a.style2.infobtn:hover::before {
   object-fit: cover;
 }
 
-/*설명글*/
 .brand-name {
   position: absolute;
   color: #fff;
@@ -498,7 +495,6 @@ a.style2.infobtn:hover::before {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-/*버튼 박스*/
 .brand-botton {
   position: absolute;
   right: 20px;
@@ -512,4 +508,4 @@ a.style2.infobtn:hover::before {
   display: inline-block;
   border-radius: 6px;
   color: #fff;
-}
+} */

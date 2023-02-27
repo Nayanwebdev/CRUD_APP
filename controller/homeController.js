@@ -14,19 +14,20 @@ export const addUser = async (req, res) => {
     const isRegisteredUser = await User.findOne({ where: { email: req.body.email } });
     if (isRegisteredUser) {
       fs.unlinkSync(path.join(__dirname, "../uploads/avatar", req.file.filename));
-      return res.status(403).json("user already registered");
+      // return res.status(403).json("user already registered");
+      return res.redirect("back");
     }
     const AVATAR_PATH = path.join("/uploads/avatar");
     const user = await User.create({
       name: req.body.name,
       avatar: AVATAR_PATH + "/" + req.file.filename,
       email: req.body.email,
-      position:req.body.position,
-      phone:req.body.phone,
+      position: req.body.position,
+      phone: req.body.phone,
       password: req.body.password,
     });
     // res.status(200).json(user);
-    res.render("viewAllUser.ejs", { user: user });
+    res.redirect("/getuser");
   } catch (err) {
     res.status(500).json("something went wrong");
   }
@@ -36,7 +37,7 @@ export const getAllUser = async (req, res) => {
   try {
     const allUser = await User.findAll({});
     // res.status(200).json(allUser);
-    res.render("viewAllUser.ejs", { user: allUser });
+    res.render("viewAllUser", { user: allUser });
   } catch (err) {
     res.status(500).json("something went wrong");
   }
@@ -48,7 +49,7 @@ export const getSingleUser = async (req, res) => {
     const tempUser = [];
     tempUser.push(user);
     // res.status(200).json(tempUser);
-    res.render("viewUser.ejs", { user: tempUser });
+    res.render("viewUser", { user: tempUser });
   } catch (err) {
     res.status(500).json("something went wrong");
   }
@@ -57,8 +58,10 @@ export const getSingleUser = async (req, res) => {
 export const deleteUser = async (req, res) => {
   try {
     const user = await User.findOne({ where: { id: req.params.id } });
-    fs.unlinkSync(path.join(__dirname, "..", user.avatar));
-
+    const avatar = user.avatar;
+    if (fs.existsSync(path.join(__dirname, "..", avatar))) {
+      fs.unlinkSync(path.join(__dirname, "..", avatar));
+    }
     const deleteUser = await User.destroy({ where: { id: req.params.id } });
     // return res.status(200).json("user deleted successfully");
     return res.redirect("back");
