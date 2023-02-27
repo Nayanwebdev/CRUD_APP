@@ -2,7 +2,6 @@ header {
   height: 68px;
   padding-block: 12px;
 }
-
 .nav-menu > ul {
   display: flex;
   margin: 0;
@@ -61,7 +60,6 @@ header {
 .px-4 {
   padding-left: 1.5rem !important;
 }
-
 .zyppedgeCntr h1 {
   font-size: 7.4rem;
   font-weight: 600;
@@ -182,15 +180,12 @@ a:hover {
   color: #fff;
   font-weight: 900;
 }
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap");
-
 .form-body-fp {
   height: calc(100vh - 68px);
   background-color: #152733;
   overflow: hidden;
 }
-
 .form-holder {
   display: flex;
   flex-direction: column;
@@ -199,7 +194,6 @@ a:hover {
   text-align: center;
   min-height: 100vh;
 }
-
 .form-holder .form-content {
   position: relative;
   text-align: center;
@@ -209,7 +203,6 @@ a:hover {
   padding: 0px 10px;
   width: 100%;
 }
-
 .form-content .form-items {
   border: 3px solid #fff;
   padding: 40px;
@@ -221,7 +214,6 @@ a:hover {
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
-
 .form-content h3 {
   color: #fff;
   text-align: left;
@@ -229,11 +221,9 @@ a:hover {
   font-weight: 600;
   margin-bottom: 5px;
 }
-
 .form-content h3.form-title {
   margin-bottom: 30px;
 }
-
 .form-content p {
   color: #fff;
   text-align: left;
@@ -242,13 +232,11 @@ a:hover {
   line-height: 20px;
   margin-bottom: 30px;
 }
-
 .form-content label,
 .was-validated .form-check-input:invalid ~ .form-check-label,
 .was-validated .form-check-input:valid ~ .form-check-label {
   color: #fff;
 }
-
 .form-content input[type="text"],
 .form-content input[type="password"],
 .form-content input[type="email"],
@@ -284,7 +272,6 @@ a:hover {
   transition: 0.3s ease-in-out;
   border-radius: 4px;
 }
-
 .form-button-fp button:hover {
   background-color: #fff;
   border-color: #12c0a6;
@@ -296,7 +283,6 @@ a:hover {
   border: 0px;
   box-shadow: none;
 }
-
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active {
@@ -305,7 +291,6 @@ a:hover {
   border: none !important;
   box-shadow: none;
 }
-
 .form-content textarea {
   position: static !important;
   width: 100%;
@@ -324,50 +309,40 @@ a:hover {
   transition: none;
   margin-bottom: 14px;
 }
-
 .form-content textarea:hover,
 .form-content textarea:focus {
   border: 0;
   background-color: #ebeff8;
   color: #8d8d8d;
 }
-
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
-
 .mv-up {
   margin-top: -9px !important;
   margin-bottom: 8px !important;
 }
-
 .invalid-feedback {
   color: #ff606e;
 }
-
 .valid-feedback {
   color: #2acc80;
 }
-
 .gradient-custom {
   /* fallback for old browsers */
   background: #f6d365;
-
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
-
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
 }
-
 a.style2 {
   position: relative;
   text-decoration: none;
